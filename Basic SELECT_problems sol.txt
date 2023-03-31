@@ -1,0 +1,140 @@
+PROBLEM LINK :
+ https://www.hackerrank.com/challenges/revising-the-select-query?isFullScreen=true
+
+SOLUTION:
+SELECT * FROM CITY WHERE population > 100000 AND Countrycode ="USA";
+___________________________________________________
+PROBLEM :
+ https://www.hackerrank.com/challenges/revising-the-select-query-2?isFullScreen=true
+
+SOL:
+Select name from city where population > 120000 and Countrycode = "USA";
+___________________________________________________
+PROBLEM :
+ https://www.hackerrank.com/challenges/select-all-sql?isFullScreen=true
+
+SOL:
+Select * from city
+_________________________________
+PROBLEM: 
+https://www.hackerrank.com/challenges/japanese-cities-attributes?isFullScreen=true
+
+SOL:
+select * from city where countrycode="JPN";
+_____________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/japanese-cities-name?isFullScreen=true
+
+SOL:
+select name from city where CountryCode="JPN";
+____________________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-1?isFullScreen=true
+
+SOL:
+select city,State from station;
+___________________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-3?isFullScreen=true
+
+SOL:
+Select distinct city from station where ID%2=0;
+_______________________________________________
+PROBLEM : https://www.hackerrank.com/challenges/weather-observation-station-4?isFullScreen=true
+
+SOL:
+select count(city) - count(distinct city) from station;
+_________________________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-5?isFullScreen=true
+
+SOL:
+(SELECT CITY, length(CITY) as len
+FROM STATION
+ORDER BY len, CITY 
+LIMIT 1)
+UNION
+(SELECT CITY, length(CITY) as len
+FROM STATION
+ORDER BY len DESC, CITY 
+LIMIT 1)
+___________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-6?isFullScreen=true
+
+SOL:
+select distinct(city) from station where
+city like "a%" or
+city like "e%" or
+city like "i%" or
+city like "o%" or
+city like "u%";
+_________________________________
+PROBLEMS:
+https://www.hackerrank.com/challenges/weather-observation-station-7?isFullScreen=true
+
+SOL:
+select distinct(city) from station where
+city like "%a" or
+city like "%e" or
+city like "%i" or
+city like "%o" or
+city like "%u";
+________________________________
+PROBLEM :
+https://www.hackerrank.com/challenges/weather-observation-station-8?isFullScreen=true
+
+SOL:
+select distinct city from station
+ where left(city,1) in('a','e','i','o','u') and right(city,1) in('a','e','i','o','u') 
+____________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-9?isFullScreen=true
+
+SOL:
+select distinct city from station 
+where left(city,1) not in('a','e','i','o','u') 
+______________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-10?isFullScreen=true
+
+SOL:
+select distinct city from station 
+where RIGHT(city,1) not in('a','e','i','o','u') 
+------------------------------------------------------------------------------------------
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-11?isFullScreen=true
+
+SOL:
+select distinct city from station where left(city,1) not in('a','e','i','o','u') or right(city,1) not in('a','e','i','o','u');
+-------------------------------------------------------------------------------------------
+PROBLEM:
+https://www.hackerrank.com/challenges/weather-observation-station-12?isFullScreen=true
+
+SOL:
+select distinct city from station 
+where left(city,1) not in('a','e','i','o','u') AND
+right(city,1) not in('a','e','i','o','u');
+----------------------------------------------------------------------
+PROBLEM:
+https://www.hackerrank.com/challenges/more-than-75-marks?isFullScreen=true
+
+SOL:
+select name from students
+where marks > 75 
+order by right(name,3),id asc;
+______________________________________________
+PROBLEM:
+https://www.hackerrank.com/challenges/name-of-employees?isFullScreen=true
+
+SOL:
+SELECT NAME FROM EMPLOYEE
+ORDER BY NAME;
+----------------------------------------------------------------------------------------------------
+PROBLEM:
+https://www.hackerrank.com/challenges/salary-of-employees?isFullScreen=true
+
+SOL:
+SELECT NAME FROM EMPLOYEE
+WHERE SALARY>2000 AND MONTHS<10
+ORDER BY EMPLOYEE_ID;

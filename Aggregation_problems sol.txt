@@ -1,0 +1,111 @@
+problem:
+https://www.hackerrank.com/challenges/revising-aggregations-the-count-function?isFullScreen=true
+
+sol:
+SELECT COUNT(*) FROM CITY WHERE POPULATION > 100000
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/revising-aggregations-the-average-function?isFullScreen=true
+
+sol:
+SELECT AVG(POPULATION)
+FROM CITY
+WHERE DISTRICT ='California'
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/average-population?isFullScreen=true
+
+sol:
+SELECT ROUND(AVG(POPULATION), 0)
+FROM CITY;
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/japan-population?isFullScreen=true
+
+sol:
+SELECT SUM(POPULATION)
+FROM CITY
+WHERE COUNTRYCODE ='JPN'
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/population-density-difference?isFullScreen=true
+
+sol:
+Select max(population)-min(population) from city
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/the-blunder?isFullScreen=true
+
+sol:
+SELECT CEIL(AVG(Salary)-AVG(REPLACE(Salary,'0','')))
+FROM  EMPLOYEES
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/earnings-of-employees?isFullScreen=true
+
+sol:
+SELECT (SALARY * MONTHS) as MAX_SAL, COUNT(*)
+FROM EMPLOYEE
+GROUP BY MAX_SAL
+ORDER BY MAX_SAL DESC
+LIMIT 1;
+--------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-2?isFullScreen=true
+
+sol:
+select round(sum(lat_n),2),round(sum(long_w),2) from station
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-13?isFullScreen=true
+
+sol:
+select round(sum(lat_n),4) from station
+where lat_n > 38.7880 and lat_n < 137.2345;
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-14?isFullScreen=true
+
+sol:
+select round(max(lat_n),4) from station
+where lat_n <137.2345;
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-15?isFullScreen=true
+
+sol:
+select Round(LONG_W,4)
+from  STATION
+where LAT_N = (Select Max(LAT_N)from STATION where LAT_N < 137.2345);
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-16?isFullScreen=true
+
+sol:
+select Round(min(Lat_n),4)
+from  STATION
+where  LAT_N>38.7780;
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-17?isFullScreen=true
+
+sol:
+select Round(LONG_W,4)
+ from  STATION
+ where LAT_N = (Select Min(LAT_N)from STATION where LAT_N>38.7780);
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-18?isFullScreen=true
+
+sol:
+select Round(ABS(MIN(LAT_N) - MAX(LAT_N)) + ABS(MIN(LONG_W) - MAX(LONG_W)),4)
+FROM STATION;
+---------------------------------------------------------------------------------------------------------
+problem:
+https://www.hackerrank.com/challenges/weather-observation-station-19?isFullScreen=true
+
+sol:
+SELECT ROUND(SQRT(POWER(MAX(LAT_N)-MIN(LAT_N),2)+POWER(MAX(LONG_W)-MIN(LONG_W),2)),4)
+FROM STATION;
+---------------------------------------------------------------------------------------------------------
+-
